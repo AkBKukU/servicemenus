@@ -42,3 +42,4 @@ Different common imagemagick functions
 Working with disk images
 
 - Floppy: Dir to Disk Image [1.44MB]
+- Floppy: Disk Image Extract [FAT12]
