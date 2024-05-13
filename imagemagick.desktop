@@ -1,0 +1,27 @@
+[Desktop Entry]
+Type=Service
+MimeType=image/*;
+Actions=convert_jpg;convert_png;mogrify_rotate_180;convert_1000px;
+Icon=folder-pictures-symbolic
+X-KDE-Submenu=ImageMagick
+
+
+[Desktop Action convert_jpg]
+Name=Convert [JPG]
+Icon=folder-pictures-symbolic
+Exec=file="%u";convert "$file" "${file%.*}.jpg"
+
+[Desktop Action convert_png]
+Name=Convert [PNG]
+Icon=folder-pictures-symbolic
+Exec=file="%u";convert "$file" "${file%.*}.png"
+
+[Desktop Action convert_1000px]
+Name=Convert: Limit 1000px
+Icon=folder-pictures-symbolic
+Exec=file="%u";convert "$file" -resize 1000x1000\> "${file%.*}-1000px.${file##*.}"
+
+[Desktop Action mogrify_rotate_180]
+Name=Mogrify: Rotate 180
+Icon=rotation-allowed
+Exec=file="%u";mogrify -rotate 180 "$file"

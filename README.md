@@ -27,3 +27,11 @@ FFMpeg video conversion presets
 - Convert: PCM Audio [MOV]
 - Tool: Remove Audio
 - Tool: Under 25MB [MP4]
+
+## ImageMagick
+Different common imagemagick functions
+
+- Convert [JPG]
+- Convert [PNG]
+- Mogrify: Rotate 180
+- Convert: Limit 1000px
