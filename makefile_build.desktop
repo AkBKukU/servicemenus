@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Service
+MimeType=inode/directory;
+Actions=make;cleanMake;build
+Icon=makeidx
+X-KDE-Submenu=MakeFile Build
+
+
+[Desktop Action make]
+Name=Simple [make]
+Icon=makeidx
+Exec=make -C %f > %f/build.log
+
+
+[Desktop Action cleanMake]
+Name=Full [make clean all]
+Icon=edit-clear-all
+Exec=make clean all -C %f > %f/build.log
+
