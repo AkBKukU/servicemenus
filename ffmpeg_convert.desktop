@@ -1,0 +1,23 @@
+[Desktop Entry]
+Type=Service
+MimeType=video/*;
+Actions=pcm_mov;remove_audio;size_limit;
+Icon=video-mlt-playlist
+X-KDE-Submenu=FFMpeg Video Tools
+
+[Desktop Action pcm_mov]
+Name=Convert: PCM Audio [MOV]
+Icon=video-mlt-playlist
+Exec=file="%u";ffmpeg -i "$file" -c:v copy -acodec pcm_s24be -ar 48000 "${file%.*}-pcm.mov"
+
+
+[Desktop Action remove_audio]
+Name=Tool: Remove Audio
+Icon=audio-volume-muted
+Exec=file="%u";ffmpeg -i "$file" -c copy -an "${file%.*}-muted.${file##*.}"
+
+
+[Desktop Action size_limit]
+Name=Tool: Under 25MB [MP4]
+Icon=audio-volume-muted
+Exec=ffmpeg_size_limit.sh "%u"
