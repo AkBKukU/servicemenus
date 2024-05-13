@@ -20,18 +20,25 @@ Basic commands for building makefile based software development projects.
 - Simple [make]
 - Full [make clean all]
 
+
 ## FFMpeg Video Tools
 FFMpeg video conversion presets
-
 
 - Convert: PCM Audio [MOV]
 - Tool: Remove Audio
 - Tool: Under 25MB [MP4]
 
-## ImageMagick
+
+### ImageMagick
 Different common imagemagick functions
 
 - Convert [JPG]
 - Convert [PNG]
 - Mogrify: Rotate 180
 - Convert: Limit 1000px
+
+
+### Media Image
+Working with disk images
+
+- Floppy: Dir to Disk Image [1.44MB]
