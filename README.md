@@ -43,3 +43,15 @@ Working with disk images
 
 - Floppy: Dir to Disk Image [1.44MB]
 - Floppy: Disk Image Extract [FAT12]
+
+
+### Wine Launch
+Run with and configure 32b & 64b user prefixes as well as provide an option
+for a prefix local to the executable.
+
+- WIN32: Launch
+- WIN32: Configure
+- WIN64: Launch
+- WIN64: Configure
+- LOCAL: Launch
+- LOCAL: Configure

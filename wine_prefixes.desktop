@@ -1,0 +1,41 @@
+[Desktop Entry]
+Type=Service
+MimeType=application/*;
+Actions=wine32_launch;wine32_cfg;wine64_launch;wine64_cfg;winelocal_launch;winelocal_cfg;
+Icon=wine
+X-KDE-Submenu=Wine Launch
+
+[Desktop Action wine32_launch]
+Name=WIN32: Launch
+Icon=wine
+Exec=env WINEPREFIX="$HOME/.wine32" WINEARCH=win32 wine %u
+
+
+[Desktop Action wine32_cfg]
+Name=WIN32: Configure
+Icon=configure
+Exec=env WINEPREFIX="$HOME/.wine32" WINEARCH=win32 winecfg
+
+
+[Desktop Action wine64_launch]
+Name=WIN64: Launch
+Icon=wine
+Exec=env WINEPREFIX="$HOME/.wine64" wine %u
+
+
+[Desktop Action wine64_cfg]
+Name=WIN64: Configure
+Icon=configure
+Exec=env WINEPREFIX="$HOME/.wine64" winecfg
+
+
+[Desktop Action winelocal_launch]
+Name=LOCAL: Launch
+Icon=wine
+Exec=env WINEPREFIX="$(dirname "%u")/.wine" wine %u
+
+
+[Desktop Action winelocal_cfg]
+Name=LOCAL: Configure
+Icon=configure
+Exec=if [ -d "$(dirname "%u")/.wine" ] ; then env WINEPREFIX="$(dirname "%u")/.wine" winecfg ; else kdialog --yesno "Create as 32 bit Arch?" ; if [ $? -eq 0 ]; then env WINEPREFIX="$(dirname "%u")/.wine" WINEARCH=win32 winecfg; else env WINEPREFIX="$(dirname "%u")/.wine" winecfg;fi;fi

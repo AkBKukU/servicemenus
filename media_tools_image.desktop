@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 MimeType=application/*;
-Actions=extract_floppy_144;
+Actions=extract_floppy_144;extract_iso;
 Icon=kfloppy
 X-KDE-Submenu=Media Image
 
@@ -9,4 +9,11 @@ X-KDE-Submenu=Media Image
 [Desktop Action extract_floppy_144]
 Name=Floppy: Disk Image Extract [FAT12]
 Icon=kfloppy
-Exec=img="%u";mkdir -p "${img%.*}-files";mcopy -i "$img" -sp ::* "${img%.*}-files"
+Exec=img="%u";mkdir -p "${img%.*}";mcopy -i "$img" -sp ::* "${img%.*}"
+
+
+[Desktop Action extract_iso]
+Name=ISO: Disc Image Extract [ISO9660]
+Icon=drive-optical
+Exec=dir="%u";7z -o"${dir%.*}" x "$dir"
+

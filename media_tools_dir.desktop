@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 MimeType=inode/directory;
-Actions=make_floppy_144;
+Actions=make_floppy_144;make_iso;
 Icon=kfloppy
 X-KDE-Submenu=Media Image
 
@@ -11,3 +11,8 @@ Name=Floppy: Dir to Disk Image [1.44MB]
 Icon=kfloppy
 Exec=dir="%u";floppy="$(basename $dir).img";dd if=/dev/zero of="$dir/../$floppy"  bs=1474560  count=1; mformat -i "$dir/../$floppy" -f 1440; for file in $dir/* ; do mcopy -i "$dir/../$floppy" "$file" "::$($file | sed 's/^$dir//')" ; done;
 
+
+[Desktop Action make_iso]
+Name=ISO: Dir to Disc Image [ISO9660]
+Icon=drive-optical
+Exec=dir="%u";iso="$(basename $dir).iso";mkisofs -o "$iso" "$dir"
