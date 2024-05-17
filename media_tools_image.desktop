@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Service
 MimeType=application/*;
-Actions=extract_floppy_144;extract_iso;
-Icon=kfloppy
+Actions=extract_iso;extract_floppy_144;
+Icon=media-write-cd
 X-KDE-Submenu=Media Image
 
 

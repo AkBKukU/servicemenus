@@ -1,0 +1,33 @@
+[Desktop Entry]
+Type=Service
+MimeType=application/*;
+Actions=clean_35;write_144;write_720;write_360;
+Icon=kfloppy
+X-KDE-Submenu=Greaseweazle Simple
+Terminal=true
+
+
+[Desktop Action clean_35]
+Name=Clean 3.5"
+Icon=kfloppy
+Exec=gw clean --drive a | echo ""
+
+[Desktop Action write_144]
+Name=Write 1.44MB FAT12
+Icon=kfloppy
+Exec=gw write --format ibm.1440 --drive a %u | echo ""
+
+
+[Desktop Action write_720]
+Name=Write 720KB FAT12
+Icon=kfloppy
+Exec=gw write --format ibm.720 --drive a %u | echo ""
+
+
+
+[Desktop Action write_360]
+Name=Write 360KB FAT12
+Icon=kfloppy
+Exec=gw write --format ibm.360 --drive b %u | echo ""
+
+
