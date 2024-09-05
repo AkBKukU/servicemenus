@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 MimeType=video/*;
-Actions=pcm_mov;remove_audio;size_limit;
+Actions=pcm_mov;towav;remove_audio;size_limit;scale;
 Icon=video-mlt-playlist
 X-KDE-Submenu=FFMpeg Video Tools
 
@@ -10,6 +10,15 @@ Name=Convert: PCM Audio [MOV]
 Icon=video-mlt-playlist
 Exec=file="%u";ffmpeg -i "$file" -c:v copy -acodec pcm_s24be -ar 48000 "${file%.*}-pcm.mov"
 
+[Desktop Action towav]
+Name=Convert: PCM Audio [WAV]
+Icon=video-mlt-playlist
+Exec=file="%u";ffmpeg -i "$file" -acodec pcm_s24be -ar 48000 "${file%.*}-pcm.wav"
+
+[Desktop Action scale]
+Name=Tool: Scale to 720p
+Icon=video-mlt-playlist
+Exec=file="%u";ffmpeg -i "$file" -c:v libx264 -crf 23 -vf scale=1280:720 -c:a copy"${file%.*}-720p.${file##*.}"
 
 [Desktop Action remove_audio]
 Name=Tool: Remove Audio
@@ -18,6 +27,8 @@ Exec=file="%u";ffmpeg -i "$file" -c copy -an "${file%.*}-muted.${file##*.}"
 
 
 [Desktop Action size_limit]
-Name=Tool: Under 25MB [MP4]
+Name=Tool: Under 10MB [MP4]
 Icon=audio-volume-muted
 Exec=ffmpeg_size_limit.sh "%u"
+
+
