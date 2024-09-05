@@ -13,7 +13,7 @@ Exec=file="%u";ffmpeg -i "$file" -c:v copy -acodec pcm_s24be -ar 48000 "${file%.
 [Desktop Action towav]
 Name=Convert: PCM Audio [WAV]
 Icon=video-mlt-playlist
-Exec=file="%u";ffmpeg -i "$file" -acodec pcm_s24be -ar 48000 "${file%.*}-pcm.wav"
+Exec=file="%u";ffmpeg -i "$file" "${file%.*}-pcm.wav"
 
 [Desktop Action scale]
 Name=Tool: Scale to 720p
