@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 MimeType=image/*;
-Actions=convert_jpg;convert_png;mogrify_rotate_180;convert_1000px;
+Actions=convert_jpg;convert_png;mogrify_rotate_180;convert_1000px;trim20;trim40;trim60;
 Icon=folder-pictures-symbolic
 X-KDE-Submenu=ImageMagick
 
@@ -25,3 +25,18 @@ Exec=file="%u";convert "$file" -resize 1000x1000 "${file%.*}-1000px.${file##*.}"
 Name=Mogrify: Rotate 180
 Icon=rotation-allowed
 Exec=file="%u";mogrify -rotate 180 "$file"
+
+[Desktop Action trim20]
+Name=Trim: Threshold 20%
+Icon=image-crop-symbolic
+Exec=file="%u";convert "$file" -fuzz 20% -trim +repage "${file%.*}-trim.${file##*.}"
+
+[Desktop Action trim40]
+Name=Trim: Threshold 40%
+Icon=image-crop-symbolic
+Exec=file="%u";convert "$file" -fuzz 40% -trim +repage "${file%.*}-trim.${file##*.}"
+
+[Desktop Action trim60]
+Name=Trim: Threshold 60%
+Icon=image-crop-symbolic
+Exec=file="%u";convert "$file" -fuzz 60% -trim +repage "${file%.*}-trim.${file##*.}"
