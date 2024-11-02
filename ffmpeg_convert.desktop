@@ -18,7 +18,7 @@ Exec=file="%u";ffmpeg -i "$file" "${file%.*}-pcm.wav"
 [Desktop Action scale]
 Name=Tool: Scale to 720p
 Icon=video-mlt-playlist
-Exec=file="%u";ffmpeg -i "$file" -c:v libx264 -crf 23 -vf scale=1280:720 -c:a copy"${file%.*}-720p.${file##*.}"
+Exec=file="%u";ffmpeg -i "$file" -c:v libx264 -crf 23 -vf scale=1280:720 -c:a copy "${file%.*}-720p.${file##*.}"
 
 [Desktop Action remove_audio]
 Name=Tool: Remove Audio
