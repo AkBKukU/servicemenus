@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 MimeType=video/*;
-Actions=pcm_mov;towav;remove_audio;size_limit;scale;
+Actions=pcm_mov;towav;remove_audio;size_limit;scale;scalevert;
 Icon=video-mlt-playlist
 X-KDE-Submenu=FFMpeg Video Tools
 
@@ -19,6 +19,11 @@ Exec=file="%u";ffmpeg -i "$file" "${file%.*}-pcm.wav"
 Name=Tool: Scale to 720p
 Icon=video-mlt-playlist
 Exec=file="%u";ffmpeg -i "$file" -c:v libx264 -crf 23 -vf scale=1280:720 -c:a copy "${file%.*}-720p.${file##*.}"
+
+[Desktop Action scalevert]
+Name=Tool: Scale to 720p (Vertical)
+Icon=video-mlt-playlist
+Exec=file="%u";ffmpeg -i "$file" -c:v libx264 -crf 23 -vf scale=720:1280 -c:a copy "${file%.*}-720p.${file##*.}"
 
 [Desktop Action remove_audio]
 Name=Tool: Remove Audio
