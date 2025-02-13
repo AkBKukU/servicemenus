@@ -31,5 +31,5 @@ ffmpeg \
     -b:a "$target_audio_bitrate_kbit_s"k \
     "${1%.*}-24MB.mp4"
 
-rn ffmpeg2pass-0.log
+rm ffmpeg2pass-0.log
 rm ffmpeg2pass-0.log.mbtree

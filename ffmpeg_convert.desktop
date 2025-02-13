@@ -34,6 +34,6 @@ Exec=file="%u";ffmpeg -i "$file" -c copy -an "${file%.*}-muted.${file##*.}"
 [Desktop Action size_limit]
 Name=Tool: Under 10MB [MP4]
 Icon=audio-volume-muted
-Exec=ffmpeg_size_limit.sh "%u"
+Exec=/home/akbkuku/.local/share/kio/servicemenus/bin/ffmpeg_size_limit.sh "%u"
 
 
