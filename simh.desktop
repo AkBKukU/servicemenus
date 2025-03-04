@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Service
+MimeType=text/plain;inode/directory;
+Actions=nova;
+Icon=mergecell-vertical
+X-KDE-Submenu=SimH
+
+[Desktop Action nova]
+Name=Nova Script
+Icon=/home/akbkuku/Projects/Data General/.Icon.png
+Exec=konsole --workdir "`dirname "%f"`" -e /home/akbkuku/bin/simh/nova %u
+
