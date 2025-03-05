@@ -8,5 +8,5 @@ X-KDE-Submenu=SimH
 [Desktop Action nova]
 Name=Nova Script
 Icon=/home/akbkuku/Projects/Data General/.Icon.png
-Exec=konsole --workdir "`dirname "%f"`" -e /home/akbkuku/bin/simh/nova %u
+Exec=konsole --profile "simH" --workdir "`dirname "%f"`" -e /home/akbkuku/bin/simh/nova %u
 
