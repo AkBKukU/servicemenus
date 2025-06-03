@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
-MimeType=video/*;
-Actions=pcm_mov;towav;remove_audio;size_limit;scale;scalevert;rawvideo
+MimeType=video/*;audio/*
+Actions=pcm_mov;towav;remove_audio;size_limit;scale;scalevert;rawvideo;audio_replace
 Icon=video-mlt-playlist
 X-KDE-Submenu=FFMpeg Video Tools
 
@@ -42,3 +42,7 @@ Icon=audio-volume-muted
 Exec=/home/akbkuku/.local/share/kio/servicemenus/bin/ffmpeg_size_limit.sh "%u"
 
 
+[Desktop Action audio_replace]
+Name=Tool: Replace Audio
+Icon=kdenlive-split-audio
+Exec=/home/akbkuku/.local/share/kio/servicemenus/bin/ffmpeg_audio_replace.sh %U
