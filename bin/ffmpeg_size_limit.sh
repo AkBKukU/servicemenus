@@ -29,7 +29,7 @@ ffmpeg \
     -pass 2 \
     -c:a aac \
     -b:a "$target_audio_bitrate_kbit_s"k \
-    "${1%.*}-24MB.mp4"
+    "${1%.*}-8MB.mp4"
 
 rm ffmpeg2pass-0.log
 rm ffmpeg2pass-0.log.mbtree
