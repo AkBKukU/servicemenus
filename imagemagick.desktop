@@ -9,34 +9,34 @@ X-KDE-Submenu=ImageMagick
 [Desktop Action convert_jpg]
 Name=Convert [JPG]
 Icon=folder-pictures-symbolic
-Exec=file="%u";convert "$file" "${file%.*}.jpg"
+Exec=for file in %U;do convert "$file" "${file%.*}.jpg";done
 
 [Desktop Action convert_png]
 Name=Convert [PNG]
 Icon=folder-pictures-symbolic
-Exec=file="%u";convert "$file" "${file%.*}.png"
+Exec=for file in %U;do convert "$file" "${file%.*}.png";done
 
 [Desktop Action convert_1000px]
 Name=Convert: Limit 1000px
 Icon=folder-pictures-symbolic
-Exec=file="%u";convert "$file" -resize 1000x1000 "${file%.*}-1000px.${file##*.}"
+Exec=for file in %U;do convert "$file" -resize 1000x1000 "${file%.*}-1000px.${file##*.}";done
 
 [Desktop Action mogrify_rotate_180]
 Name=Mogrify: Rotate 180
 Icon=rotation-allowed
-Exec=file="%u";mogrify -rotate 180 "$file"
+Exec=for file in %U;do mogrify -rotate 180 "$file";done
 
 [Desktop Action trim20]
 Name=Trim: Threshold 20%
 Icon=image-crop-symbolic
-Exec=file="%u";convert "$file" -fuzz 20% -trim +repage "${file%.*}-trim.${file##*.}"
+Exec=for file in %U;do convert "$file" -fuzz 20% -trim +repage "${file%.*}-trim.${file##*.}";done
 
 [Desktop Action trim40]
 Name=Trim: Threshold 40%
 Icon=image-crop-symbolic
-Exec=file="%u";convert "$file" -fuzz 40% -trim +repage "${file%.*}-trim.${file##*.}"
+Exec=for file in %U;do convert "$file" -fuzz 40% -trim +repage "${file%.*}-trim.${file##*.}";done
 
 [Desktop Action trim60]
 Name=Trim: Threshold 60%
 Icon=image-crop-symbolic
-Exec=file="%u";convert "$file" -fuzz 60% -trim +repage "${file%.*}-trim.${file##*.}"
+Exec=for file in %U;do convert "$file" -fuzz 60% -trim +repage "${file%.*}-trim.${file##*.}";done

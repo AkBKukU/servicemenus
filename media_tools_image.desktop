@@ -9,11 +9,11 @@ X-KDE-Submenu=Media Image
 [Desktop Action extract_floppy_144]
 Name=Floppy: Disk Image Extract [FAT12]
 Icon=kfloppy
-Exec=img="%u";mkdir -p "${img%.*}";mcopy -i "$img" -sp ::* "${img%.*}"
+Exec=for img in %U;do mkdir -p "${img%.*}";mcopy -i "$img" -sp ::* "${img%.*}";done
 
 
 [Desktop Action extract_iso]
 Name=ISO: Disc Image Extract [ISO9660]
 Icon=drive-optical
-Exec=dir="%u";7z -o"${dir%.*}" x "$dir"
+Exec=for dir in %U;do 7z -o"${dir%.*}" x "$dir";done
 
