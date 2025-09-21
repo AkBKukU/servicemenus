@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Service
+MimeType=inode/directory;
+Actions=make;
+Icon=preferences-system-backup
+X-KDE-Submenu=Backup
+
+
+[Desktop Action make]
+Name=Simple [make]
+Icon=preferences-system-backup
+Exec=dir="%u";mkdir -p /remote/data/Back-Up/$(hostname)/$dir;tar -czvf /remote/data/Back-Up/$(hostname)/$dir/$(date +%s)_$(basename $dir).tar.gz $dir
+
+
+
