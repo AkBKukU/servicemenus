@@ -1,0 +1,20 @@
+[Desktop Entry]
+Type=Service
+MimeType=application/x-n64-rom;application/x-bps-patch;application/x-ips-patch;
+Actions=copy_sd;load_run;
+Icon=applications-games
+X-KDE-Submenu=Everdrive X7
+
+[Desktop Action copy_sd]
+Name=Copy to SD
+Icon=applications-games
+Terminal=True
+Exec=mono /home/akbkuku/.local/share/kio/servicemenus/bin/usb64.exe -cp %u sd:%u
+
+
+[Desktop Action load_run]
+Name=Load to RAM and Run
+Icon=applications-games
+Terminal=True
+Exec=mono /home/akbkuku/.local/share/kio/servicemenus/bin/usb64.exe -rom=%u -start
+

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 MimeType=image/*;
-Actions=convert_jpg;convert_png;mogrify_rotate_180;convert_1000px;trim20;trim40;trim60;
+Actions=convert_jpg;convert_png;mogrify_rotate_180;convert_1000px;trim20;trim40;trim60;qual80;
 Icon=folder-pictures-symbolic
 X-KDE-Submenu=ImageMagick
 
@@ -40,3 +40,9 @@ Exec=for file in %U;do convert "$file" -fuzz 40% -trim +repage "${file%.*}-trim.
 Name=Trim: Threshold 60%
 Icon=image-crop-symbolic
 Exec=for file in %U;do convert "$file" -fuzz 60% -trim +repage "${file%.*}-trim.${file##*.}";done
+
+
+[Desktop Action qual80]
+Name=Quality: 80% [JPG]
+Icon=image-crop-symbolic
+Exec=for file in %U;do convert "$file" -quality 60%  "${file%.*}-quality80.jpg";done
