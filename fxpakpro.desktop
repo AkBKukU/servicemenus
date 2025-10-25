@@ -1,0 +1,32 @@
+[Desktop Entry]
+Type=Service
+MimeType=application/vnd.nintendo.snes.rom;application/x-bps-patch;application/x-ips-patch;
+Actions=start;copy_sd;open_patcher;copy_sd_folder
+
+Icon=applications-games
+X-KDE-Submenu=FxPak Pro
+
+[Desktop Action start]
+Name=Start SNI
+Icon=curve-connector
+Terminal=True
+Exec=/home/akbkuku/bin/sni/sni
+
+
+[Desktop Action copy_sd]
+Name=Load and Run
+Icon=applications-games
+Terminal=True
+Exec=/home/akbkuku/bin/sni/send_file "%u"
+
+[Desktop Action copy_sd_folder]
+Name=Open File Manager
+Icon=folder-add
+Terminal=True
+Exec=/home/akbkuku/bin/sni/manage_files
+
+[Desktop Action open_patcher]
+Name=Open Patch Tool
+Icon=text-x-patch
+Terminal=True
+Exec=cd "$(dirname %u)" && /home/akbkuku/.local/share/kio/servicemenus/bin/flips-linux

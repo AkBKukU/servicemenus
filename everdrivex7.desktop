@@ -1,7 +1,8 @@
 [Desktop Entry]
 Type=Service
 MimeType=application/x-n64-rom;application/x-bps-patch;application/x-ips-patch;
-Actions=copy_sd;load_run;
+Actions=copy_sd;load_run;open_patcher;copy_sd_folder
+
 Icon=applications-games
 X-KDE-Submenu=Everdrive X7
 
@@ -9,12 +10,23 @@ X-KDE-Submenu=Everdrive X7
 Name=Copy to SD
 Icon=applications-games
 Terminal=True
-Exec=mono /home/akbkuku/.local/share/kio/servicemenus/bin/usb64.exe -cp %u sd:%u
+Exec=mono /home/akbkuku/.local/share/kio/servicemenus/bin/usb64.exe -cp "%u" "sd:$(basename %u)"
 
+[Desktop Action copy_sd_folder]
+Name=Copy to SD in Folder
+Icon=folder-add
+Terminal=True
+Exec=dir="$(kdialog --inputbox "Please input folder name\n(Folder must already exist)" "ROMS")" && mono /home/akbkuku/.local/share/kio/servicemenus/bin/usb64.exe -cp "%u" "sd:$dir/$(basename %u)"
 
 [Desktop Action load_run]
 Name=Load to RAM and Run
 Icon=applications-games
 Terminal=True
-Exec=mono /home/akbkuku/.local/share/kio/servicemenus/bin/usb64.exe -rom=%u -start
+Exec=mono /home/akbkuku/.local/share/kio/servicemenus/bin/usb64.exe -rom="%u" -start
 
+
+[Desktop Action open_patcher]
+Name=Open Patch Tool
+Icon=text-x-patch
+Terminal=True
+Exec=cd "$(dirname %u)" && /home/akbkuku/.local/share/kio/servicemenus/bin/flips-linux
