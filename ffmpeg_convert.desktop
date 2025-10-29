@@ -8,7 +8,7 @@ X-KDE-Submenu=FFMpeg Video Tools
 [Desktop Action pcm_mov]
 Name=Convert: PCM Audio [MOV]
 Icon=video-mlt-playlist
-Exec=for file in %U;do ffmpeg -i "$file" -c:v copy -acodec pcm_s24be -ar 48000 "${file%.*}-pcm.mov";done
+Exec=for file in %U;do ffmpeg -i "$file" -c:v copy -acodec pcm_s24be -ar 48000 -map 0 "${file%.*}-pcm.mov";done
 
 [Desktop Action towav]
 Name=Convert: PCM Audio [WAV]
