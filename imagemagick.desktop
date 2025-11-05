@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 MimeType=image/*;
-Actions=convert_jpg;convert_png;mogrify_rotate_180;convert_1000px;trim20;trim40;trim60;qual80;
+Actions=convert_jpg;convert_png;convert_bmp3;mogrify_rotate_180;convert_1000px;trim20;trim40;trim60;qual80;
 Icon=folder-pictures-symbolic
 X-KDE-Submenu=ImageMagick
 
@@ -10,6 +10,11 @@ X-KDE-Submenu=ImageMagick
 Name=Convert [JPG]
 Icon=folder-pictures-symbolic
 Exec=for file in %U;do convert "$file" "${file%.*}.jpg";done
+
+[Desktop Action convert_bmp3]
+Name=Convert [BMP3]
+Icon=folder-pictures-symbolic
+Exec=for file in %U;do convert "$file" BMP3:"${file%.*}.bmp";done
 
 [Desktop Action convert_png]
 Name=Convert [PNG]
