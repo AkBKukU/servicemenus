@@ -13,7 +13,7 @@ Exec=for file in %U;do ffmpeg -i "$file" -c:v copy -acodec pcm_s24be -ar 48000 -
 [Desktop Action pcm_tc]
 Name=Convert: Name to Timecode [MOV]
 Icon=video-mlt-playlist
-Exec=for file in %U;do ffmpeg -i "$file" -c copy  -map 0 -timecode "`echo "$file" | sed "s/.*_//g" | sed "s/\.mov//g" | sed "s/-/:/g"`:00" "${file%.*}-tc.mov";done
+Exec=for file in %U;do ffmpeg -i "$file" -c copy  -map 0 -timecode "`echo "$file" | sed "s/.*_//g" | sed "s/.mov//g" | sed "s/-/:/g"`:00" "${file%.*}-tc.mov";done
 
 [Desktop Action towav]
 Name=Convert: PCM Audio [WAV]
