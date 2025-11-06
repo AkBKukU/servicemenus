@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 MimeType=video/*;audio/*
-Actions=pcm_mov;towav;remove_audio;size_limit;scale;scalevert;rawvideo;audio_replace;tomp4
+Actions=pcm_mov;pcm_tc;towav;remove_audio;size_limit;scale;scalevert;rawvideo;audio_replace;tomp4
 Icon=video-mlt-playlist
 X-KDE-Submenu=FFMpeg Video Tools
 
@@ -9,6 +9,11 @@ X-KDE-Submenu=FFMpeg Video Tools
 Name=Convert: PCM Audio [MOV]
 Icon=video-mlt-playlist
 Exec=for file in %U;do ffmpeg -i "$file" -c:v copy -acodec pcm_s24be -ar 48000 -map 0 "${file%.*}-pcm.mov";done
+
+[Desktop Action pcm_tc]
+Name=Convert: Name to Timecode [MOV]
+Icon=video-mlt-playlist
+Exec=for file in %U;do ffmpeg -i "$file" -c copy  -map 0 -timecode "`echo "$file" | sed "s/.*_//g" | sed "s/\.mov//g" | sed "s/-/:/g"`:00" "${file%.*}-tc.mov";done
 
 [Desktop Action towav]
 Name=Convert: PCM Audio [WAV]
