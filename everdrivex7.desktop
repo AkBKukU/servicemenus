@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Service
-MimeType=application/x-n64-rom;application/x-bps-patch;application/x-ips-patch;
+MimeType=application/x-n64-rom;application/x-bps-patch;application/x-ips-patch;application/octet-stream;
 Actions=copy_sd;load_run;open_patcher;copy_sd_folder
 
 Icon=applications-games
