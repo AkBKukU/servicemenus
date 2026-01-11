@@ -15,4 +15,4 @@ Exec=dir="%u";floppy="$(basename $dir).img";dd if=/dev/zero of="$dir/../$floppy"
 [Desktop Action make_iso]
 Name=ISO: Dir to Disc Image [ISO9660]
 Icon=drive-optical
-Exec=dir="%u";iso="$(basename $dir).iso";mkisofs -o "$iso" "$dir"
+Exec=dir="%u";iso="$(basename "$dir").iso";mkisofs -o "$iso" "$dir"; xmessage "$dir"; xmessage "$iso"
