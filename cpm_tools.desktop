@@ -1,0 +1,26 @@
+[Desktop Entry]
+Type=Service
+MimeType=application/*;inode/directory;
+Actions=cpm_convert_smc70;cpm_list_smc70;cpm_extract_smc70;cpm_build_smc70;
+Icon=akonadiconsole
+X-KDE-Submenu=CPM Image Tools
+
+[Desktop Action cpm_convert_smc70]
+Name=Sony SMC-70: Convert IMG
+Icon=kfloppy
+Exec=for img in %U;do gw convert --diskdefs /home/$USER/.local/share/kio/servicemenus/util/gw-diskdef.cfg --format sony.smc70 "$img" "${img%.*}.img";done
+
+[Desktop Action cpm_list_smc70]
+Name=Sony SMC-70: List
+Icon=kfloppy
+Exec=for img in %U;do cpmls -f smc70 "$img" > "${img%.*}.txt";done
+
+[Desktop Action cpm_extract_smc70]
+Name=Sony SMC-70: Extract
+Icon=kfloppy
+Exec=for img in %U;do mkdir -p "${img%.*}" ; cpmcp -f smc70 -t "$img" 0:* "${img%.*}";done
+
+[Desktop Action cpm_build_smc70]
+Name=Sony SMC-70: Build
+Icon=kfloppy
+Exec=for dir in %U;do cp /home/$USER/.local/share/kio/servicemenus/util/cpm/smc70.img "$dir".img ; cpmcp -f smc70 -t "$dir".img $dir/* 0: ;done
